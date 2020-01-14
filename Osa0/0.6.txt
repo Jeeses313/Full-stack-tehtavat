@@ -1,0 +1,22 @@
+title 0.6
+
+note over selain:
+Käyttäjä painaa save-nappia, jolloin
+selain alkaa suorittaa js-koodia, jolla
+tehdään lomakkeen tekstikentän ja painamishetken
+mukainen muistiinpano, joka lisätään sivun latauksen
+jälkeen tehtyyn notes-taulukkoon, minkä jälkeen 
+musitiinpanojen lista piirretään uudestaan ja
+tehdään POST-pyyntö palvelimelle.
+end note
+selain -> palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+note over palvelin:
+Palvelin lisää POST pyynnön 
+rungossa tulevan 
+muistiinpanon muistiinpanolistaan. 
+end note
+palvelin --> selain: {"message":"note created"}
+note over selain 
+Selain suorittaa tapahtumakäsittelijän, joka
+tulostaa konsoliin palautetun JSON:n.
+end note 

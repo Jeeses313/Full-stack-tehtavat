@@ -1,0 +1,22 @@
+title 0.5
+
+selain -> palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+palvelin --> selain: HTML-koodi
+selain -> palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin --> selain: main.css
+selain -> palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+palvelin --> selain: spa.js
+note over selain:
+Selain alkaa suorittaa js-koodia,
+joka luo tyhjän notes taulukon, 
+tekee pyynnön palvelimelle
+ja asettaa lomakkeelle submitin 
+tapahtuessa suoritettavan funktion, jolla
+lisätään muistiinpanoja.
+end note
+selain -> palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin --> selain: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"}, ...]
+note over selain 
+Selain suorittaa tapahtumakäsittelijän, joka
+tuo muistiinpanot näkyviin.
+end note 
