@@ -5,7 +5,7 @@ import Notification from './components/Notification'
 import Togglable from './components/Togglable'
 import blogService from './services/blogs'
 import loginService from './services/login'
-const noteFormRef = React.createRef()
+const blogFormRef = React.createRef()
 
 const App = () => {
     const [blogs, setBlogs] = useState([])
@@ -15,7 +15,7 @@ const App = () => {
     const [message, setMessage] = useState(null)
 
     const blogForm = () => (
-        <Togglable showLabel='new blog' hideLabel='cancel' ref={noteFormRef}>
+        <Togglable showLabel='new blog' hideLabel='cancel' ref={blogFormRef}>
             <BlogForm createBlog={createBlog}></BlogForm>
         </Togglable>
     )
@@ -67,7 +67,7 @@ const App = () => {
             setTimeout(() => {
                 setMessage(null)
             }, 5000)
-            noteFormRef.current.toggleVisibility()
+            blogFormRef.current.toggleVisibility()
             return true
         } catch (exception) {
             setMessage({ message: 'error', error: true })
